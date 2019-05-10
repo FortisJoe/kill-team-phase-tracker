@@ -65,16 +65,14 @@ class KillTeam:
 
     def canticle_plus_button(self):
         self.selected_canticle += 1
-        if self.selected_canticle < 7:
-            if self.selected_canticle == 8:
-                self.selected_canticle = INCANTATION_OF_THE_IRON_SOUL
+        if self.selected_canticle == 8:
+            self.selected_canticle = INCANTATION_OF_THE_IRON_SOUL
         self.display_canticle()
 
     def canticle_minus_button(self):
         self.selected_canticle -= 1
-        if self.selected_canticle > 0 or self.selected_canticle == -1:
-            if self.selected_canticle == -1:
-                self.selected_canticle = BENEDICTION_OF_THE_OMNISSIAH
+        if self.selected_canticle == -1:
+            self.selected_canticle = BENEDICTION_OF_THE_OMNISSIAH
         self.display_canticle()
 
     def canticle_ok_button(self):
