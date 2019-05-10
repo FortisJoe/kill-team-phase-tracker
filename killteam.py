@@ -1,6 +1,6 @@
 from time import sleep
 
-from gpiozero import LED, Button
+from gpiozero import PWMLED, Button
 from random import randint
 
 INCANTATION_OF_THE_IRON_SOUL = 1
@@ -18,19 +18,19 @@ class KillTeam:
         self.minusButton = Button(27)
         self.okButton = Button(22)
 
-        self.canticleLed1 = LED(5)  # IncantationOfTheIronSoul
-        self.canticleLed2 = LED(6)  # LitanyOfTheElectromancer
-        self.canticleLed3 = LED(13)  # Chant of the Remorseless Fist
-        self.canticleLed4 = LED(19)  # Shroudpsalm
-        self.canticleLed5 = LED(26)  # Invocation of Machine Might
-        self.canticleLed6 = LED(21)  # Benediction of the Omnissiah
+        self.canticleLed1 = PWMLED(5)  # IncantationOfTheIronSoul
+        self.canticleLed2 = PWMLED(6)  # LitanyOfTheElectromancer
+        self.canticleLed3 = PWMLED(13)  # Chant of the Remorseless Fist
+        self.canticleLed4 = PWMLED(19)  # Shroudpsalm
+        self.canticleLed5 = PWMLED(26)  # Invocation of Machine Might
+        self.canticleLed6 = PWMLED(21)  # Benediction of the Omnissiah
 
-        self.initiativeLed = LED(23)
-        self.movementLed = LED(24)
-        self.psychicLed = LED(25)
-        self.shootingLed = LED(12)
-        self.meleeLed = LED(16)
-        self.moraleLed = LED(20)
+        self.initiativeLed = PWMLED(23)
+        self.movementLed = PWMLED(24)
+        self.psychicLed = PWMLED(25)
+        self.shootingLed = PWMLED(12)
+        self.meleeLed = PWMLED(16)
+        self.moraleLed = PWMLED(20)
 
         self.selected_canticle = INCANTATION_OF_THE_IRON_SOUL
         self.canticle1Used = False
@@ -231,12 +231,12 @@ class KillTeam:
             self.meleeLed.on()
             self.moraleLed.on()
         else:
-            self.initiativeLed.blink()
-            self.movementLed.blink()
-            self.psychicLed.blink()
-            self.shootingLed.blink()
-            self.meleeLed.blink()
-            self.moraleLed.blink()
+            self.initiativeLed.pulse()
+            self.movementLed.pulse()
+            self.psychicLed.pulse()
+            self.shootingLed.pulse()
+            self.meleeLed.pulse()
+            self.moraleLed.pulse()
             
     def close(self):
         self.initiativeLed.close()
@@ -265,32 +265,32 @@ class KillTeam:
             self.canticleLed6.off()
             if self.selected_canticle == 1:
                 if blinking:
-                    self.canticleLed1.blink()
+                    self.canticleLed1.pulse()
                 else:
                     self.canticleLed1.on()
             elif self.selected_canticle == LITANY_OF_THE_ELECTROMANCER:
                 if blinking:
-                    self.canticleLed2.blink()
+                    self.canticleLed2.pulse()
                 else:
                     self.canticleLed2.on()
             elif self.selected_canticle == CHANT_OF_THE_REMORSELESS_FIST:
                 if blinking:
-                    self.canticleLed3.blink()
+                    self.canticleLed3.pulse()
                 else:
                     self.canticleLed3.on()
             elif self.selected_canticle == SHROUDPSALM:
                 if blinking:
-                    self.canticleLed4.blink()
+                    self.canticleLed4.pulse()
                 else:
                     self.canticleLed4.on()
             elif self.selected_canticle == INVOCATION_OF_MACHINE_MIGHT:
                 if blinking:
-                    self.canticleLed5.blink()
+                    self.canticleLed5.pulse()
                 else:
                     self.canticleLed5.on()
             elif self.selected_canticle == BENEDICTION_OF_THE_OMNISSIAH:
                 if blinking:
-                    self.canticleLed6.blink()
+                    self.canticleLed6.pulse()
                 else:
                     self.canticleLed6.on()
         else:
@@ -319,24 +319,24 @@ class KillTeam:
             else:
                 self.canticleLed6.off()
             if self.selected_canticle == 1:
-                self.canticleLed1.blink()
+                self.canticleLed1.pulse()
             elif self.selected_canticle == LITANY_OF_THE_ELECTROMANCER:
-                self.canticleLed2.blink()
+                self.canticleLed2.pulse()
             elif self.selected_canticle == CHANT_OF_THE_REMORSELESS_FIST:
-                self.canticleLed3.blink()
+                self.canticleLed3.pulse()
             elif self.selected_canticle == SHROUDPSALM:
-                self.canticleLed4.blink()
+                self.canticleLed4.pulse()
             elif self.selected_canticle == INVOCATION_OF_MACHINE_MIGHT:
-                self.canticleLed5.blink()
+                self.canticleLed5.pulse()
             elif self.selected_canticle == BENEDICTION_OF_THE_OMNISSIAH:
-                self.canticleLed6.blink()
+                self.canticleLed6.pulse()
             else:
-                self.canticleLed1.blink()
-                self.canticleLed2.blink()
-                self.canticleLed3.blink()
-                self.canticleLed4.blink()
-                self.canticleLed5.blink()
-                self.canticleLed6.blink()
+                self.canticleLed1.pulse()
+                self.canticleLed2.pulse()
+                self.canticleLed3.pulse()
+                self.canticleLed4.pulse()
+                self.canticleLed5.pulse()
+                self.canticleLed6.pulse()
 
 
 if __name__ == "__main__":
