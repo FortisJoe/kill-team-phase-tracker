@@ -6,7 +6,7 @@ In future this readme will contain more data about how the project works.
 
 # Circuit Diagram
 
-![Image of Circuit Diagram](https://github.com/zauberjoe/kill-team-phase-tracker/circuit_design/circuit.png)
+![Image of Circuit Diagram](https://github.com/zauberjoe/kill-team-phase-tracker/blob/master/circuit_design/circuit.png?raw=true)
 
 [An electronic circuit design is included within the project](https://github.com/zauberjoe/kill-team-phase-tracker/circuit_design/AdMechBoard.fzz) - you will need Fritzing to edit and view this design: http://fritzing.org/home/
 
