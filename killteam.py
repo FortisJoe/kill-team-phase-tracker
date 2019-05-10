@@ -121,6 +121,7 @@ class KillTeam:
         self.minusButton.when_pressed = None
         self.okButton.when_pressed = None
         self.okButton.wait_for_press()
+        sleep(0.5)
 
     def psychic_phase(self):
         self.initiativeLed.off()
