@@ -203,12 +203,12 @@ class KillTeam:
         sleep(1)
 
     def select_if_end_game(self):
-        self.initiativeLed.off()
-        self.movementLed.off()
-        self.psychicLed.off()
-        self.shootingLed.off()
-        self.meleeLed.off()
-        self.moraleLed.off()
+        self.initiativeLed.pulse()
+        self.movementLed.pulse()
+        self.psychicLed.pulse()
+        self.shootingLed.pulse()
+        self.meleeLed.pulse()
+        self.moraleLed.pulse()
 
         self.plusButton.when_pressed = None
         self.minusButton.when_pressed = self.end_game_select
@@ -224,19 +224,19 @@ class KillTeam:
     def end_game_select(self):
         self.continueGame = not self.continueGame
         if self.continueGame:
-            self.initiativeLed.on()
-            self.movementLed.on()
-            self.psychicLed.on()
-            self.shootingLed.on()
-            self.meleeLed.on()
-            self.moraleLed.on()
-        else:
             self.initiativeLed.pulse()
             self.movementLed.pulse()
             self.psychicLed.pulse()
             self.shootingLed.pulse()
             self.meleeLed.pulse()
             self.moraleLed.pulse()
+        else:
+            self.initiativeLed.off()
+            self.movementLed.off()
+            self.psychicLed.off()
+            self.shootingLed.off()
+            self.meleeLed.off()
+            self.moraleLed.off()
             
     def close(self):
         self.initiativeLed.close()
