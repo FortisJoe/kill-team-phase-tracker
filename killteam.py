@@ -61,7 +61,7 @@ class KillTeam:
         self.plusButton.when_pressed = None
         self.minusButton.when_pressed = None
         self.okButton.when_pressed = None
-        sleep(1)
+        sleep(0.5)
 
     def canticle_plus_button(self):
         self.selected_canticle += 1
@@ -107,7 +107,7 @@ class KillTeam:
         self.minusButton.when_pressed = None
         self.okButton.when_pressed = None
         self.okButton.wait_for_press()
-        sleep(1)
+        sleep(0.5)
 
     def movement_phase(self):
         self.initiativeLed.off()
@@ -134,7 +134,7 @@ class KillTeam:
         self.minusButton.when_pressed = None
         self.okButton.when_pressed = None
         self.okButton.wait_for_press()
-        sleep(1)
+        sleep(0.5)
 
     def shooting_phase(self):
         self.initiativeLed.off()
@@ -156,7 +156,7 @@ class KillTeam:
         if self.selected_canticle in [SHROUDPSALM,
                                       BENEDICTION_OF_THE_OMNISSIAH]:
             self.display_canticle(True, False)
-        sleep(1)
+        sleep(0.5)
 
     def melee_phase(self):
         self.initiativeLed.off()
@@ -180,7 +180,7 @@ class KillTeam:
                                       CHANT_OF_THE_REMORSELESS_FIST,
                                       INVOCATION_OF_MACHINE_MIGHT]:
             self.display_canticle(True, False)
-        sleep(1)
+        sleep(0.5)
 
     def morale_phase(self):
         self.initiativeLed.off()
@@ -200,7 +200,7 @@ class KillTeam:
 
         if self.selected_canticle in [1]:
             self.display_canticle(True, False)
-        sleep(1)
+        sleep(0.5)
 
     def select_if_end_game(self):
         self.initiativeLed.pulse()
@@ -219,7 +219,7 @@ class KillTeam:
         self.plusButton.when_pressed = None
         self.minusButton.when_pressed = None
         self.okButton.when_pressed = None
-        sleep(1)
+        sleep(0.5)
 
     def end_game_select(self):
         self.continueGame = not self.continueGame
